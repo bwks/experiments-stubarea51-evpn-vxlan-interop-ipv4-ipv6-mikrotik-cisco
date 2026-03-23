@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" modified="2026-03-23T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="evpn-vxlan-interop" name="EVPN/VXLAN Interop Lab">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="title" value="EVPN/VXLAN Interop Lab — AS 4208675309 — IS-IS L2" style="text;html=1;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- core-01 -->
+        <!-- ============================================================ -->
+        <mxCell id="core01" value="core-01&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Cat8000v (Route Reflector)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#888&quot;&gt;Lo: 100.127.1.1&lt;br&gt;Lo6: 3fff:1ab:d127:d1::1&lt;/font&gt;" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;fontStyle=1;fontSize=12;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="100" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- agg-01 -->
+        <!-- ============================================================ -->
+        <mxCell id="agg01" value="agg-01&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Cat8000v (Aggregation)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#888&quot;&gt;Lo: 100.127.1.21&lt;br&gt;Lo6: 3fff:1ab:d127:d1::21&lt;/font&gt;" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;fontStyle=1;fontSize=12;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="310" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- twr-01 -->
+        <!-- ============================================================ -->
+        <mxCell id="twr01" value="twr-01&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;MikroTik CHR (VTEP)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#888&quot;&gt;Lo: 100.127.50.101&lt;br&gt;Lo6: 3fff:1ab:d127:d50::101&lt;/font&gt;" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#E6F3FF;strokeColor=#0066CC;fontStyle=1;fontSize=12;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="530" width="210" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- twr-02 -->
+        <!-- ============================================================ -->
+        <mxCell id="twr02" value="twr-02&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;MikroTik CHR (VTEP)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#888&quot;&gt;Lo: 100.127.50.102&lt;br&gt;Lo6: 3fff:1ab:d127:d50::102&lt;/font&gt;" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#E6F3FF;strokeColor=#0066CC;fontStyle=1;fontSize=12;html=1;" vertex="1" parent="1">
+          <mxGeometry x="970" y="530" width="210" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- twr-03 -->
+        <!-- ============================================================ -->
+        <mxCell id="twr03" value="twr-03&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;MikroTik CHR (VTEP / Legacy MCLAG)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#888&quot;&gt;Lo: 100.127.50.103&lt;br&gt;Lo6: 3fff:1ab:d127:d50::103&lt;/font&gt;" style="shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FFE6E6;strokeColor=#CC0000;fontStyle=1;fontSize=12;html=1;" vertex="1" parent="1">
+          <mxGeometry x="695" y="740" width="210" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Link 1: core-01 gig2 <-> agg-01 gig5 -->
+        <!-- ============================================================ -->
+        <mxCell id="link1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;strokeWidth=2;fontColor=#333333;" edge="1" source="core01" target="agg01" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link1_src" value="&lt;font style=&quot;font-size:9px&quot;&gt;gig2&lt;br&gt;100.126.1.49/29&lt;br&gt;3fff:1ab:d1:d48::49/64&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=top;fontSize=9;fontColor=#005073;" vertex="1" parent="1">
+          <mxGeometry x="560" y="200" width="140" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="link1_dst" value="&lt;font style=&quot;font-size:9px&quot;&gt;gig5&lt;br&gt;100.126.1.50/29&lt;br&gt;3fff:1ab:d1:d48::50/64&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=bottom;fontSize=9;fontColor=#005073;" vertex="1" parent="1">
+          <mxGeometry x="560" y="260" width="140" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="link1_subnet" value="&lt;font style=&quot;font-size:8px;color:#999&quot;&gt;100.126.1.48/29&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="900" y="230" width="120" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Link 2: agg-01 gig2 <-> twr-01 eth2 -->
+        <!-- ============================================================ -->
+        <mxCell id="link2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0066CC;strokeWidth=2;" edge="1" source="agg01" target="twr01" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="470"/>
+              <mxPoint x="525" y="470"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link2_src" value="&lt;font style=&quot;font-size:9px&quot;&gt;gig2&lt;br&gt;100.126.50.1/29&lt;br&gt;3fff:1ab:d50:d0::1/64&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=middle;fontSize=9;fontColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="580" y="410" width="160" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="link2_dst" value="&lt;font style=&quot;font-size:9px&quot;&gt;eth2&lt;br&gt;100.126.50.2/29&lt;br&gt;3fff:1ab:d50:d0::2/64&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=middle;fontSize=9;fontColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="340" y="460" width="160" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Link 3: agg-01 gig3 <-> twr-02 eth2 -->
+        <!-- ============================================================ -->
+        <mxCell id="link3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0066CC;strokeWidth=2;" edge="1" source="agg01" target="twr02" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="850" y="470"/>
+              <mxPoint x="1075" y="470"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link3_src" value="&lt;font style=&quot;font-size:9px&quot;&gt;gig3&lt;br&gt;100.126.50.17/29&lt;br&gt;3fff:1ab:d50:d16::17/64&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="860" y="410" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="link3_dst" value="&lt;font style=&quot;font-size:9px&quot;&gt;eth2&lt;br&gt;100.126.50.18/29&lt;br&gt;3fff:1ab:d50:d16::18/64&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="460" width="170" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Link 4: twr-01 eth3 <-> twr-03 eth2 -->
+        <!-- ============================================================ -->
+        <mxCell id="link4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" edge="1" source="twr01" target="twr03" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="525" y="690"/>
+              <mxPoint x="750" y="690"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link4_src" value="&lt;font style=&quot;font-size:9px&quot;&gt;eth3&lt;br&gt;100.126.50.9/29&lt;br&gt;3fff:1ab:d50:d8::9/64&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=middle;fontSize=9;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="340" y="640" width="160" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="link4_dst" value="&lt;font style=&quot;font-size:9px&quot;&gt;eth2&lt;br&gt;100.126.50.10/29&lt;br&gt;3fff:1ab:d50:d8::10/64&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=middle;fontSize=9;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="560" y="700" width="160" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Link 5: twr-02 eth3 <-> twr-03 eth3 -->
+        <!-- ============================================================ -->
+        <mxCell id="link5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" edge="1" source="twr02" target="twr03" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1075" y="690"/>
+              <mxPoint x="850" y="690"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link5_src" value="&lt;font style=&quot;font-size:9px&quot;&gt;eth3&lt;br&gt;100.126.50.25/29&lt;br&gt;3fff:1ab:d50:d24::25/64&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="640" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="link5_dst" value="&lt;font style=&quot;font-size:9px&quot;&gt;eth3&lt;br&gt;100.126.50.26/29&lt;br&gt;3fff:1ab:d50:d24::26/64&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="880" y="700" width="170" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Overlay Info Boxes -->
+        <!-- ============================================================ -->
+        <mxCell id="vni1104" value="&lt;b&gt;VNI 1104&lt;/b&gt; — IPv4 over IPv4 VXLAN&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;VLAN 1104 | Subnet: 198.18.104.0/24&lt;br&gt;RT 1104:1104 | VTEP: IPv4 Loopbacks&lt;/font&gt;" style="shape=mxgraph.flowchart.document;fillColor=#FFF3E0;strokeColor=#FF9800;html=1;fontSize=10;align=center;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="120" y="570" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vni1106" value="&lt;b&gt;VNI 1106&lt;/b&gt; — IPv4 over IPv6 VXLAN&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;VLAN 1106 | Subnet: 198.18.106.0/24&lt;br&gt;RT 1106:1106 | VTEP: IPv6 Loopbacks&lt;/font&gt;" style="shape=mxgraph.flowchart.document;fillColor=#E8F5E9;strokeColor=#4CAF50;html=1;fontSize=10;align=center;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="120" y="650" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Blue border = MikroTik CHR&lt;br&gt;Gray border = Cisco Cat8000v&lt;br&gt;Red border = Legacy MCLAG&lt;br&gt;Blue links = agg ↔ tower&lt;br&gt;Red links = tower ↔ MCLAG&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;fontSize=10;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="100" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Global info -->
+        <mxCell id="global" value="&lt;b&gt;Global Parameters&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;BGP AS: 4208675309&lt;br&gt;IGP: IS-IS Level 2&lt;br&gt;Overlay: EVPN/VXLAN&lt;br&gt;P2P Links: /29 subnets&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;fontSize=10;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="220" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

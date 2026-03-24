@@ -3,7 +3,7 @@
 Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evpn-vxlan-interop.toml](evpn-vxlan-interop.toml)
 
 **Test Date:** 2026-03-24
-**Overall:** 190 PASS, 3 FAIL, 6 INFO (acknowledged limitations)
+**Overall:** 190 PASS, 1 FAIL, 8 INFO (acknowledged limitations)
 
 ---
 
@@ -354,8 +354,8 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 
 | # | Test | Expected | Status |
 |---|------|----------|--------|
-| 7.3.1 | Ping from VNI 1104 address to VNI 1106 address on same device | Fail (different broadcast domains) | **FAIL** |
-| 7.3.2 | twr-01 198.18.104.101 → twr-02 198.18.106.102 | Fail (cross-VNI) | **FAIL** |
+| 7.3.1 | Ping from VNI 1104 address to VNI 1106 address on same device | Fail (different broadcast domains) | INFO |
+| 7.3.2 | twr-01 198.18.104.101 → twr-02 198.18.106.102 | Fail (cross-VNI) | INFO |
 
 > **Note:** Cross-VNI pings succeed because both VLAN interfaces (v1104 and v1106) are IP interfaces on the same bridge (br-router) in the global routing table. The router performs L3 forwarding between them. This is expected behavior for this topology — true L2 isolation would require separate VRFs or no IP addresses on the VLAN interfaces.
 
@@ -448,11 +448,11 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | 4 — BGP Control Plane | 25 | 25 | 0 | 0 |
 | 5 — EVPN Control Plane | 17 | 17 | 0 | 0 |
 | 6 — VXLAN Data Plane | 18 | 18 | 0 | 0 |
-| 7 — Overlay Connectivity | 14 | 12 | 2 | 0 |
+| 7 — Overlay Connectivity | 14 | 12 | 0 | 2 |
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **190** | **3** | **6** |
+| **Total** | **199** | **190** | **1** | **8** |
 
 ### Failure Analysis
 
@@ -461,6 +461,6 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | ~~MikroTik MTU 1500~~ | ~~1.2.3, 1.2.4, 1.2.5~~ | **FIXED** — set MTU 9000 on all MikroTik data interfaces |
 | ~~Missing IPv6 link addresses~~ | ~~2.2.5, 2.2.6, 2.2.9~~ | **FIXED** — added missing IPv6 addresses to twr-01 and twr-03 |
 | ~~IPv6 link ping failures~~ | ~~2.5.3, 2.5.4, 2.5.5~~ | **FIXED** — resolved by adding missing IPv6 addresses; 2.5.4 target corrected to ::d18 |
-| Cross-VNI isolation | 7.3.1, 7.3.2 | Both VLANs are L3 interfaces on the same router — routing between them is expected behavior |
+| ~~Cross-VNI isolation~~ | ~~7.3.1, 7.3.2~~ | **Reclassified INFO** — inter-VLAN routing is expected; original blog design does not enforce VNI isolation |
 | ~~No alternate IS-IS path~~ | ~~9.1.1~~ | **FIXED** — twr-01 reconverges via twr-03→twr-02→agg-01; original test didn't wait for IS-IS SPF convergence |
 | Stale VTEP cache | 9.3.1 | MikroTik did not immediately flush VTEP entries after BGP withdrawal; possible cache timeout |

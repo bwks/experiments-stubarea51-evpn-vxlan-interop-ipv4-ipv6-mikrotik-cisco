@@ -1,7 +1,7 @@
 # EVPN/VXLAN Interop Lab — Failure Analysis
 
 **Test Date:** 2026-03-24
-**Overall:** 190 PASS / 3 FAIL / 6 INFO out of 199 tests
+**Overall:** 190 PASS / 1 FAIL / 8 INFO out of 199 tests
 
 ---
 
@@ -15,11 +15,11 @@
 | 4 — BGP Control Plane | 25 | 25 | 0 | 0 |
 | 5 — EVPN Control Plane | 17 | 17 | 0 | 0 |
 | 6 — VXLAN Data Plane | 18 | 18 | 0 | 0 |
-| 7 — Overlay Connectivity | 14 | 12 | 2 | 0 |
+| 7 — Overlay Connectivity | 14 | 12 | 0 | 2 |
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **190** | **3** | **6** |
+| **Total** | **199** | **190** | **1** | **8** |
 
 ---
 
@@ -81,7 +81,7 @@
 
 ---
 
-### 4. Cross-VNI Isolation Not Enforced (2 failures)
+### 4. ~~Cross-VNI Isolation Not Enforced (2 failures)~~ — Reclassified as INFO
 
 | Test | Ping Path | Expected | Actual |
 |------|-----------|----------|--------|

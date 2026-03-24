@@ -116,8 +116,12 @@
 |------|--------|----------|--------|
 | 9.3.1 | Disable twr-03 BGP | twr-01/twr-02 remove twr-03 VTEPs | core-01 withdrew routes, but twr-01 retained stale VTEP entries |
 
-**Root Cause:** After twr-03's BGP sessions were disabled and core-01 confirmed route withdrawal (EVPN prefix count dropped from 6 to 4), MikroTik twr-01 did not immediately remove the corresponding dynamic VTEP entries from its VXLAN VTEP table. This suggests MikroTik maintains a VTEP cache with a longer timeout than the BGP hold-time.
+**Root Cause:** After twr-03's BGP sessions were disabled and core-01 withdrew EVPN routes (twr-01 `prefix-count` dropped from 4 to 2), MikroTik twr-01 did not remove the corresponding dynamic VTEP entries. This is **not** a cache aging issue — the entries persist indefinitely. Tested at +20s, +60s, +3min, and +5min with no change.
 
-**Impact:** Low. Stale VTEP entries would cause traffic to be sent to a non-existent peer, which would be silently dropped. The entries should eventually age out. Overlay between twr-01↔twr-02 continued to work normally (test 9.3.2 passed).
+MikroTik RouterOS does not hook EVPN Type 3 route withdrawal to VTEP table cleanup. The VTEP entries are also not governed by bridge `ageing-time` (tested with 30s aging — no effect). The entries are marked dynamic (`D`) but behave as permanent once created by EVPN.
 
-**Remediation:** This is a MikroTik RouterOS behavior characteristic. The VTEP entries did eventually clear and were correctly restored when twr-03's BGP was re-enabled (test 9.3.3 passed). No action required unless faster failover is critical.
+**Workaround:** Toggling the EVPN VNI bindings (`/routing bgp evpn set <id> disabled=yes` then `disabled=no`) forces MikroTik to re-evaluate EVPN routes and correctly reconcile the VTEP table. Individual stale VTEPs can also be manually removed via `/interface vxlan vteps remove`.
+
+**Impact:** Low. Stale VTEP entries cause traffic to be sent to a non-existent peer, which is silently dropped. Overlay between remaining peers (twr-01↔twr-02) continues working normally (test 9.3.2 passed).
+
+**Remediation:** This is a confirmed MikroTik RouterOS limitation — not solvable via configuration. A workaround script could periodically reconcile the VTEP table against active EVPN routes, or toggle the EVPN VNI bindings after detecting a peer loss.

@@ -21,8 +21,8 @@ add name=lo.6
 
 /interface ethernet
 set [ find default-name=ether1 ] disable-running-check=no
-set [ find default-name=ether2 ] disable-running-check=no
-set [ find default-name=ether3 ] disable-running-check=no
+set [ find default-name=ether2 ] disable-running-check=no mtu=9000
+set [ find default-name=ether3 ] disable-running-check=no mtu=9000
 set [ find default-name=ether4 ] disable-running-check=no
 set [ find default-name=ether5 ] disable-running-check=no
 set [ find default-name=ether6 ] disable-running-check=no

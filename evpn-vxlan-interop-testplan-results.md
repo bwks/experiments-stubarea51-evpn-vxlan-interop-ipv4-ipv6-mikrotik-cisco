@@ -3,7 +3,7 @@
 Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evpn-vxlan-interop.toml](evpn-vxlan-interop.toml)
 
 **Test Date:** 2026-03-24
-**Overall:** 186 PASS, 7 FAIL, 6 INFO (acknowledged limitations)
+**Overall:** 189 PASS, 4 FAIL, 6 INFO (acknowledged limitations)
 
 ---
 
@@ -30,9 +30,9 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 |---|--------|-------------|--------------|-------|--------|
 | 1.2.1 | core-01 | Gig2 | 9000+ | MTU 9000 confirmed | PASS |
 | 1.2.2 | agg-01 | Gig2, Gig3, Gig5 | 9000+ | All three at MTU 9000 | PASS |
-| 1.2.3 | twr-01 | ether2, ether3 | 9000+ | MTU 1500 (default) — jumbo not configured | **FAIL** |
-| 1.2.4 | twr-02 | ether2, ether3 | 9000+ | MTU 1500 (default) — jumbo not configured | **FAIL** |
-| 1.2.5 | twr-03 | ether2, ether3 | 9000+ | MTU 1500 (default) — jumbo not configured | **FAIL** |
+| 1.2.3 | twr-01 | ether2, ether3 | 9000+ | MTU 9000 | PASS |
+| 1.2.4 | twr-02 | ether2, ether3 | 9000+ | MTU 9000 | PASS |
+| 1.2.5 | twr-03 | ether2, ether3 | 9000+ | MTU 9000 | PASS |
 
 > **Note:** MikroTik CHR defaults to 1500-byte MTU. VXLAN adds 50 bytes overhead but overlay pings with default-size packets still succeed. Jumbo frames would be needed for large payload testing.
 
@@ -442,7 +442,7 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 
 | Section | Tests | Pass | Fail | Info |
 |---------|-------|------|------|------|
-| 1 — Physical / Link Layer | 15 | 12 | 3 | 0 |
+| 1 — Physical / Link Layer | 15 | 15 | 0 | 0 |
 | 2 — IP Addressing | 31 | 31 | 0 | 0 |
 | 3 — IS-IS Underlay | 53 | 53 | 0 | 0 |
 | 4 — BGP Control Plane | 25 | 25 | 0 | 0 |
@@ -452,13 +452,13 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **186** | **7** | **6** |
+| **Total** | **199** | **189** | **4** | **6** |
 
 ### Failure Analysis
 
 | Category | Tests | Root Cause |
 |----------|-------|------------|
-| MikroTik MTU 1500 | 1.2.3, 1.2.4, 1.2.5 | MikroTik CHR defaults to 1500 MTU; jumbo frames not configured in original blog configs |
+| ~~MikroTik MTU 1500~~ | ~~1.2.3, 1.2.4, 1.2.5~~ | **FIXED** — set MTU 9000 on all MikroTik data interfaces |
 | ~~Missing IPv6 link addresses~~ | ~~2.2.5, 2.2.6, 2.2.9~~ | **FIXED** — added missing IPv6 addresses to twr-01 and twr-03 |
 | ~~IPv6 link ping failures~~ | ~~2.5.3, 2.5.4, 2.5.5~~ | **FIXED** — resolved by adding missing IPv6 addresses; 2.5.4 target corrected to ::d18 |
 | Cross-VNI isolation | 7.3.1, 7.3.2 | Both VLANs are L3 interfaces on the same router — routing between them is expected behavior |

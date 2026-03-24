@@ -1,7 +1,7 @@
 # EVPN/VXLAN Interop Lab — Failure Analysis
 
 **Test Date:** 2026-03-24
-**Overall:** 186 PASS / 7 FAIL / 6 INFO out of 199 tests
+**Overall:** 189 PASS / 4 FAIL / 6 INFO out of 199 tests
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Section | Tests | Pass | Fail | Info |
 |---------|-------|------|------|------|
-| 1 — Physical / Link Layer | 15 | 12 | 3 | 0 |
+| 1 — Physical / Link Layer | 15 | 15 | 0 | 0 |
 | 2 — IP Addressing | 31 | 31 | 0 | 0 |
 | 3 — IS-IS Underlay | 53 | 53 | 0 | 0 |
 | 4 — BGP Control Plane | 25 | 25 | 0 | 0 |
@@ -19,13 +19,13 @@
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **185** | **8** | **6** |
+| **Total** | **199** | **189** | **4** | **6** |
 
 ---
 
 ## Failure Breakdown
 
-### 1. MikroTik MTU 1500 (3 failures)
+### 1. ~~MikroTik MTU 1500 (3 failures)~~ — RESOLVED
 
 | Test | Device | Expected | Actual |
 |------|--------|----------|--------|

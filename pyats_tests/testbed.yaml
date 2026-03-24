@@ -1,0 +1,68 @@
+testbed:
+  name: evpn-vxlan-interop
+
+devices:
+  core-01:
+    os: iosxe
+    type: router
+    role: route-reflector
+    custom:
+      netmiko_device_type: cisco_xe
+      router_id: 100.127.1.1
+      ipv6_loopback: "3fff:1ab:d127:d1::1"
+    connections:
+      cli:
+        protocol: ssh
+        ip: 172.31.1.11
+
+  agg-01:
+    os: iosxe
+    type: router
+    role: aggregation
+    custom:
+      netmiko_device_type: cisco_xe
+      router_id: 100.127.1.21
+      ipv6_loopback: "3fff:1ab:d127:d1::21"
+    connections:
+      cli:
+        protocol: ssh
+        ip: 172.31.1.12
+
+  twr-01:
+    os: routeros
+    type: router
+    role: vtep
+    custom:
+      netmiko_device_type: mikrotik_routeros
+      router_id: 100.127.50.101
+      ipv6_loopback: "3fff:1ab:d127:d50::101"
+    connections:
+      cli:
+        protocol: ssh
+        ip: 172.31.1.13
+
+  twr-02:
+    os: routeros
+    type: router
+    role: vtep
+    custom:
+      netmiko_device_type: mikrotik_routeros
+      router_id: 100.127.50.102
+      ipv6_loopback: "3fff:1ab:d127:d50::102"
+    connections:
+      cli:
+        protocol: ssh
+        ip: 172.31.1.14
+
+  twr-03:
+    os: routeros
+    type: router
+    role: vtep
+    custom:
+      netmiko_device_type: mikrotik_routeros
+      router_id: 100.127.50.103
+      ipv6_loopback: "3fff:1ab:d127:d50::103"
+    connections:
+      cli:
+        protocol: ssh
+        ip: 172.31.1.15

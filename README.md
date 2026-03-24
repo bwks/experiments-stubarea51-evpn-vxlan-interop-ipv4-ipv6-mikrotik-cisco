@@ -41,6 +41,25 @@ twr-01  twr-02   (MikroTik CHR, EVPN/VXLAN VTEPs)
 ├── gather_and_test.py                   — Netmiko automation: collects configs and runs tests
 ├── ai-assist-summary.md                 — Summary of AI-assisted effort on this project
 │
+├── pyats_tests/                         — pyATS aetest validation suite
+│   ├── job.py                           — easypy job file (runs all 10 test sections)
+│   ├── test_01_physical.py              — Section 1: Physical / Link Layer
+│   ├── test_02_addressing.py            — Section 2: IP Addressing
+│   ├── test_03_isis.py                  — Section 3: IS-IS Underlay
+│   ├── test_04_bgp.py                   — Section 4: BGP Control Plane
+│   ├── test_05_evpn.py                  — Section 5: EVPN Control Plane
+│   ├── test_06_vxlan.py                 — Section 6: VXLAN Data Plane
+│   ├── test_07_overlay.py               — Section 7: Overlay Connectivity
+│   ├── test_08_mac.py                   — Section 8: MAC Learning
+│   ├── test_09_convergence.py           — Section 9: Convergence / Failover
+│   ├── test_10_interop.py               — Section 10: Interop-Specific
+│   ├── libs/
+│   │   ├── connections.py               — Netmiko SSH connection manager
+│   │   ├── parsers.py                   — Output parsing helpers
+│   │   └── testdata.py                  — Expected values for all test cases
+│   └── results/
+│       └── TaskLog.job.html             — HTML test report
+│
 ├── configs/                             — Device configurations
 │   ├── core-01.cfg                      — IOS-XE config (translated from OcNOS)
 │   ├── agg-01.cfg                       — IOS-XE config (translated from OcNOS)
@@ -103,3 +122,28 @@ The single remaining failure is **test 9.3.1** — MikroTik RouterOS does not re
 VTEP entries when EVPN Type 3 routes are withdrawn by BGP. This is a confirmed RouterOS
 limitation, not a configuration issue. See
 [evpn-vxlan-interop-failure-analysis.md](evpn-vxlan-interop-failure-analysis.md) for details.
+
+## Running the pyATS Tests
+
+Prerequisites: Python 3.9+, [uv](https://docs.astral.sh/uv/) (recommended), and SSH access to the lab devices.
+
+```bash
+# Create venv and install dependencies
+uv venv .venv --python 3.9
+uv pip install --python .venv/bin/python 'pyats[full]' netmiko 'setuptools<82'
+
+# Run all test sections (skipping convergence/failover tests)
+PATH="$PWD/.venv/bin:$PATH" .venv/bin/pyats run job pyats_tests/job.py --skip-convergence
+
+# Run all test sections including convergence tests
+PATH="$PWD/.venv/bin:$PATH" .venv/bin/pyats run job pyats_tests/job.py
+
+# Generate HTML report
+PATH="$PWD/.venv/bin:$PATH" .venv/bin/pyats run job pyats_tests/job.py \
+    --skip-convergence --html-logs pyats_tests/results
+
+# Run a single test section standalone
+.venv/bin/python -m pyats.easypy pyats_tests/job.py --testscript pyats_tests/test_03_isis.py
+```
+
+The HTML report is saved to `pyats_tests/results/TaskLog.job.html`. pyATS also archives all runs in `~/.pyats/archive/`.

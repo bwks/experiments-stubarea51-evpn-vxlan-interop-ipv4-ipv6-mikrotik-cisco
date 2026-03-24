@@ -15,8 +15,12 @@
 
 ## Human Effort
 
-~25 messages total across 3 sessions, each a short directive (1-2 sentences) —
-roughly **10-15 minutes of active interaction**.
+~25 messages total across 3 sessions. Most were short directives (1-2 sentences),
+with a few requiring domain judgment on failure analysis and design decisions.
+
+- **~10-15 minutes** typing directives
+- **~30-45 minutes** total engagement (including reviewing outputs, approving tool
+  calls, applying network engineering judgment, and setting up tooling)
 
 ### Session 1 — Initial Lab Setup
 

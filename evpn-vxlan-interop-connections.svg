@@ -47,6 +47,7 @@
   <!-- Link 2 labels: twr-01::eth2 side -->
   <text x="325" y="505" fill="#74c0fc" font-size="9" font-weight="bold" text-anchor="end">eth2</text>
   <text x="325" y="517" fill="#d4a" font-size="8" text-anchor="end">100.126.50.2/29</text>
+  <text x="325" y="528" fill="#6a8" font-size="7" text-anchor="end">3fff:1ab:d50:d0::2/64</text>
 
   <!-- Link 3 labels: agg-01::gig3 side -->
   <text x="720" y="440" fill="#74c0fc" font-size="9" font-weight="bold">gig3</text>
@@ -60,9 +61,11 @@
   <!-- Link 4 labels: twr-01::eth3 side -->
   <text x="280" y="665" fill="#ffa8a8" font-size="9" font-weight="bold" text-anchor="end">eth3</text>
   <text x="280" y="677" fill="#d4a" font-size="8" text-anchor="end">100.126.50.9/29</text>
+  <text x="280" y="688" fill="#6a8" font-size="7" text-anchor="end">3fff:1ab:d50:d8::9/64</text>
   <!-- Link 4 labels: twr-03::eth2 side -->
   <text x="420" y="718" fill="#ffa8a8" font-size="9" font-weight="bold" text-anchor="end">eth2</text>
   <text x="420" y="730" fill="#d4a" font-size="8" text-anchor="end">100.126.50.10/29</text>
+  <text x="420" y="741" fill="#6a8" font-size="7" text-anchor="end">3fff:1ab:d50:d8::10/64</text>
 
   <!-- Link 5 labels: twr-02::eth3 side -->
   <text x="820" y="665" fill="#ffa8a8" font-size="9" font-weight="bold">eth3</text>

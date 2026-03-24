@@ -1,7 +1,7 @@
 # EVPN/VXLAN Interop Lab — Failure Analysis
 
 **Test Date:** 2026-03-24
-**Overall:** 179 PASS / 14 FAIL / 6 INFO out of 199 tests
+**Overall:** 185 PASS / 8 FAIL / 6 INFO out of 199 tests
 
 ---
 
@@ -10,7 +10,7 @@
 | Section | Tests | Pass | Fail | Info |
 |---------|-------|------|------|------|
 | 1 — Physical / Link Layer | 15 | 12 | 3 | 0 |
-| 2 — IP Addressing | 31 | 25 | 6 | 0 |
+| 2 — IP Addressing | 31 | 31 | 0 | 0 |
 | 3 — IS-IS Underlay | 53 | 53 | 0 | 0 |
 | 4 — BGP Control Plane | 25 | 25 | 0 | 0 |
 | 5 — EVPN Control Plane | 17 | 17 | 0 | 0 |
@@ -19,7 +19,7 @@
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 5 | 3 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **179** | **14** | **6** |
+| **Total** | **199** | **185** | **8** | **6** |
 
 ---
 
@@ -41,7 +41,7 @@
 
 ---
 
-### 2. Missing IPv6 Link Addresses (3 failures)
+### 2. ~~Missing IPv6 Link Addresses (3 failures)~~ — RESOLVED
 
 | Test | Device | Interface | Expected Address | Actual |
 |------|--------|-----------|------------------|--------|
@@ -65,7 +65,7 @@
 
 ---
 
-### 3. IPv6 Link Ping Failures (3 failures)
+### 3. ~~IPv6 Link Ping Failures (3 failures)~~ — RESOLVED
 
 | Test | From | To | Target IP | Result |
 |------|------|----|-----------|--------|

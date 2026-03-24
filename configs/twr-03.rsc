@@ -89,6 +89,7 @@ set accept-router-advertisements=yes
 
 /ipv6 address
 add address=3fff:1ab:d127:d50::103/128 advertise=no interface=lo.6
+add address=3fff:1ab:d50:d8::10/64 advertise=no interface=ether2
 add address=3fff:1ab:d50:d24::26/64 advertise=no interface=ether3
 
 # -------------------------------------------------------------------------

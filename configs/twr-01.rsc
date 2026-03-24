@@ -89,6 +89,8 @@ set accept-router-advertisements=yes
 
 /ipv6 address
 add address=3fff:1ab:d127:d50::101/128 advertise=no interface=lo.6
+add address=3fff:1ab:d50:d0::2/64 advertise=no interface=ether2
+add address=3fff:1ab:d50:d8::9/64 advertise=no interface=ether3
 
 # -------------------------------------------------------------------------
 # Management — Static IP

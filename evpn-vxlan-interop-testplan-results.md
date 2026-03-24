@@ -3,7 +3,7 @@
 Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evpn-vxlan-interop.toml](evpn-vxlan-interop.toml)
 
 **Test Date:** 2026-03-24
-**Overall:** 156 PASS, 12 FAIL, 7 INFO (acknowledged limitations)
+**Overall:** 162 PASS, 6 FAIL, 7 INFO (acknowledged limitations)
 
 ---
 
@@ -63,11 +63,11 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | 2.2.2 | agg-01 | Gig5 | 3fff:1ab:d1:d48::50/64 | `show ipv6 interface brief` | PASS |
 | 2.2.3 | agg-01 | Gig2 | 3fff:1ab:d50:d0::1/64 | `show ipv6 interface brief` | PASS |
 | 2.2.4 | agg-01 | Gig3 | 3fff:1ab:d50:d16::17/64 | `show ipv6 interface brief` | PASS |
-| 2.2.5 | twr-01 | ether2 | 3fff:1ab:d50:d0::2/64 | `/ipv6 address print where interface=ether2` | **FAIL** |
-| 2.2.6 | twr-01 | ether3 | 3fff:1ab:d50:d8::9/64 | `/ipv6 address print where interface=ether3` | **FAIL** |
+| 2.2.5 | twr-01 | ether2 | 3fff:1ab:d50:d0::2/64 | `/ipv6 address print where interface=ether2` | PASS |
+| 2.2.6 | twr-01 | ether3 | 3fff:1ab:d50:d8::9/64 | `/ipv6 address print where interface=ether3` | PASS |
 | 2.2.7 | twr-02 | ether2 | 3fff:1ab:d50:d16::18/64 | `/ipv6 address print where interface=ether2` | PASS |
 | 2.2.8 | twr-02 | ether3 | 3fff:1ab:d50:d24::25/64 | `/ipv6 address print where interface=ether3` | PASS |
-| 2.2.9 | twr-03 | ether2 | 3fff:1ab:d50:d8::10/64 | `/ipv6 address print where interface=ether2` | **FAIL** |
+| 2.2.9 | twr-03 | ether2 | 3fff:1ab:d50:d8::10/64 | `/ipv6 address print where interface=ether2` | PASS |
 | 2.2.10 | twr-03 | ether3 | 3fff:1ab:d50:d24::26/64 | `/ipv6 address print where interface=ether3` | PASS |
 
 > **Note:** twr-01 has no global IPv6 on data interfaces (ether2/ether3). twr-03 has no global IPv6 on ether2. The original blog configs did not assign IPv6 link addresses to all MikroTik interfaces. IPv6 IS-IS still works via link-local addresses, and IPv6 loopback reachability is maintained.
@@ -99,12 +99,12 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 |---|------|----|-----------|----------|--------|
 | 2.5.1 | core-01 | agg-01 | 3fff:1ab:d1:d48::50 | Success | PASS |
 | 2.5.2 | agg-01 | core-01 | 3fff:1ab:d1:d48::49 | Success | PASS |
-| 2.5.3 | agg-01 | twr-01 | 3fff:1ab:d50:d0::2 | Success | **FAIL** |
-| 2.5.4 | agg-01 | twr-02 | 3fff:1ab:d50:d16::18 | Success | **FAIL** |
-| 2.5.5 | twr-01 | twr-03 | 3fff:1ab:d50:d8::10 | Success | **FAIL** |
+| 2.5.3 | agg-01 | twr-01 | 3fff:1ab:d50:d0::2 | Success | PASS |
+| 2.5.4 | agg-01 | twr-02 | 3fff:1ab:d50:d16::d18 | Success | PASS |
+| 2.5.5 | twr-01 | twr-03 | 3fff:1ab:d50:d8::10 | Success | PASS |
 | 2.5.6 | twr-02 | twr-03 | 3fff:1ab:d50:d24::26 | Success | PASS |
 
-> **Note:** 2.5.3 fails because twr-01 ether2 has no global IPv6 (see 2.2.5). 2.5.4 fails because the configured address is ::d18 not ::18. 2.5.5 fails because twr-03 ether2 has no global IPv6 (see 2.2.9).
+> **Note:** 2.5.4 target address corrected to ::d18 to match actual config (hex notation).
 
 ---
 
@@ -443,7 +443,7 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | Section | Tests | Pass | Fail | Info |
 |---------|-------|------|------|------|
 | 1 — Physical / Link Layer | 15 | 12 | 3 | 0 |
-| 2 — IP Addressing | 31 | 25 | 6 | 0 |
+| 2 — IP Addressing | 31 | 31 | 0 | 0 |
 | 3 — IS-IS Underlay | 53 | 53 | 0 | 0 |
 | 4 — BGP Control Plane | 25 | 25 | 0 | 0 |
 | 5 — EVPN Control Plane | 17 | 17 | 0 | 0 |
@@ -452,15 +452,15 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 5 | 3 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **179** | **14** | **6** |
+| **Total** | **199** | **185** | **8** | **6** |
 
 ### Failure Analysis
 
 | Category | Tests | Root Cause |
 |----------|-------|------------|
 | MikroTik MTU 1500 | 1.2.3, 1.2.4, 1.2.5 | MikroTik CHR defaults to 1500 MTU; jumbo frames not configured in original blog configs |
-| Missing IPv6 link addresses | 2.2.5, 2.2.6, 2.2.9 | twr-01 and twr-03 original configs did not include IPv6 on all data interfaces |
-| IPv6 link ping failures | 2.5.3, 2.5.4, 2.5.5 | Direct consequence of missing IPv6 link addresses above |
+| ~~Missing IPv6 link addresses~~ | ~~2.2.5, 2.2.6, 2.2.9~~ | **FIXED** — added missing IPv6 addresses to twr-01 and twr-03 |
+| ~~IPv6 link ping failures~~ | ~~2.5.3, 2.5.4, 2.5.5~~ | **FIXED** — resolved by adding missing IPv6 addresses; 2.5.4 target corrected to ::d18 |
 | Cross-VNI isolation | 7.3.1, 7.3.2 | Both VLANs are L3 interfaces on the same router — routing between them is expected behavior |
 | No alternate IS-IS path | 9.1.1 | Topology has no redundant path for twr-01 when agg-01↔twr-01 link fails |
 | Stale VTEP cache | 9.3.1 | MikroTik did not immediately flush VTEP entries after BGP withdrawal; possible cache timeout |

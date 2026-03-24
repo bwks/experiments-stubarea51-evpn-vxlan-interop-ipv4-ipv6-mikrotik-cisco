@@ -69,7 +69,7 @@ dst = "agg-01::gig5"
 
 # agg-01 gig2 <-> twr-01 eth2
 # IPv4: 100.126.50.1/29 <-> 100.126.50.2/29
-# IPv6: 3fff:1ab:d50:d0::1/64 <-> (none — twr-01 has no global IPv6 on eth2)
+# IPv6: 3fff:1ab:d50:d0::1/64 <-> 3fff:1ab:d50:d0::2/64
 [[links]]
 src = "agg-01::gig2"
 dst = "twr-01::eth2"
@@ -83,7 +83,7 @@ dst = "twr-02::eth2"
 
 # twr-01 eth3 <-> twr-03 eth2
 # IPv4: 100.126.50.9/29 <-> 100.126.50.10/29
-# IPv6: (none — twr-01 has no global IPv6 on eth3) <-> (none — twr-03 has no global IPv6 on eth2)
+# IPv6: 3fff:1ab:d50:d8::9/64 <-> 3fff:1ab:d50:d8::10/64
 [[links]]
 src = "twr-01::eth3"
 dst = "twr-03::eth2"

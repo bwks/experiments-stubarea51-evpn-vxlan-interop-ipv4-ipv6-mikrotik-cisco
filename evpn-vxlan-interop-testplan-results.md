@@ -3,7 +3,7 @@
 Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evpn-vxlan-interop.toml](evpn-vxlan-interop.toml)
 
 **Test Date:** 2026-03-24
-**Overall:** 189 PASS, 4 FAIL, 6 INFO (acknowledged limitations)
+**Overall:** 190 PASS, 3 FAIL, 6 INFO (acknowledged limitations)
 
 ---
 
@@ -452,7 +452,7 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
 | 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **189** | **4** | **6** |
+| **Total** | **199** | **190** | **3** | **6** |
 
 ### Failure Analysis
 

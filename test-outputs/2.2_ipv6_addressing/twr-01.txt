@@ -1,0 +1,16 @@
+Flags: D - DYNAMIC; G - GLOBAL, L - LINK-LOCAL
+Columns: ADDRESS, INTERFACE, ADVERTISE
+ #    ADDRESS                       INTERFACE  ADVERTISE
+ 0 D  ::1/128                       lo         no       
+ 1 DL fe80::5054:ff:fefb:3e63/64    ether3     no       
+ 2 DL fe80::5054:ff:fedf:1fd2/64    ether2     no       
+ 3 DL fe80::5054:ff:fefd:aab8/64    ether1     no       
+ 4  G fd00:b00b:0:1::d/64           ether1     yes      
+ 5  G 3fff:1ab:d127:d50::101/128    lo.6       no       
+ 6 DL fe80::b406:c6ff:fe6a:cfcc/64  lo.6       no       
+ 7 DL fe80::70f8:a7ff:fe93:b543/64  v1104      no       
+ 8 DL fe80::70f8:a7ff:fe93:b543/64  br-router  no       
+ 9 DL fe80::8c37:2eff:fefd:4e0e/64  lo.4       no       
+10 DL fe80::70f8:a7ff:fe93:b543/64  v1106      no       
+11  G 3fff:1ab:d50:d0::2/64         ether2     no       
+12  G 3fff:1ab:d50:d8::9/64         ether3     no

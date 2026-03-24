@@ -1,0 +1,25 @@
+IPv6 Routing Table - default - 17 entries
+Codes: C - Connected, L - Local, S - Static, U - Per-user Static route
+       B - BGP, R - RIP, H - NHRP, HG - NHRP registered
+       Hg - NHRP registration summary, HE - NHRP External, I1 - ISIS L1
+       I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary, D - EIGRP
+       EX - EIGRP external, ND - ND Default, NDp - ND Prefix, DCE - Destination
+       NDr - Redirect, RL - RPL, O - OSPF Intra, OI - OSPF Inter
+       OE1 - OSPF ext 1, OE2 - OSPF ext 2, ON1 - OSPF NSSA ext 1
+       ON2 - OSPF NSSA ext 2, la - LISP alt, lr - LISP site-registrations
+       ld - LISP dyn-eid, lA - LISP away, le - LISP extranet-policy
+       lp - LISP publications, ls - LISP destinations-summary, a - Application
+       m - OMP
+I2  3FFF:1AB:D50:D8::/64 [115/30]
+     via FE80::5054:FF:FEDF:1FD2, GigabitEthernet2
+I2  3FFF:1AB:D50:D24::/64 [115/30]
+     via FE80::5054:FF:FEC0:27EF, GigabitEthernet3
+I2  3FFF:1AB:D127:D1::1/128 [115/20]
+     via FE80::5054:FF:FE5A:8552, GigabitEthernet5
+I2  3FFF:1AB:D127:D50::101/128 [115/30]
+     via FE80::5054:FF:FEDF:1FD2, GigabitEthernet2
+I2  3FFF:1AB:D127:D50::102/128 [115/30]
+     via FE80::5054:FF:FEC0:27EF, GigabitEthernet3
+I2  3FFF:1AB:D127:D50::103/128 [115/50]
+     via FE80::5054:FF:FEC0:27EF, GigabitEthernet3
+     via FE80::5054:FF:FEDF:1FD2, GigabitEthernet2

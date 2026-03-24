@@ -1,0 +1,11 @@
+Flags: D - DYNAMIC
+Columns: BRIDGE, VLAN-IDS, CURRENT-TAGGED, CURRENT-UNTAGGED
+#   BRIDGE     VLAN-IDS  CURRENT-TAGGED  CURRENT-UNTAGGED      
+;;; added by pvid
+0 D br-router         1                  br-router             
+;;; added by pvid
+1 D br-router      1104                  vxlan-1104-ipv4-twr-02
+;;; added by pvid
+2 D br-router      1106                  vxlan-1106-ipv6-twr-02
+3   br-router      1104  br-router                             
+4   br-router      1106  br-router

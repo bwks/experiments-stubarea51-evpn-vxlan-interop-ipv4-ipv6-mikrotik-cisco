@@ -1,0 +1,12 @@
+Flags: R - RUNNING
+Columns: NAME, MTU, MAC-ADDRESS, ARP
+#   NAME     MTU  MAC-ADDRESS        ARP    
+0 R ether1  1500  52:54:00:FD:AA:B8  enabled
+1 R ether2  9000  52:54:00:DF:1F:D2  enabled
+2 R ether3  9000  52:54:00:FB:3E:63  enabled
+3   ether4  1500  52:54:00:68:68:B5  enabled
+4   ether5  1500  52:54:00:02:31:64  enabled
+5   ether6  1500  52:54:00:4B:9B:48  enabled
+6   ether7  1500  52:54:00:15:B4:2D  enabled
+7   ether8  1500  52:54:00:06:D4:3E  enabled
+8   ether9  1500  52:54:00:A8:4C:C3  enabled

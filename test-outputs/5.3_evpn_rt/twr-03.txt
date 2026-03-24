@@ -1,0 +1,8 @@
+Flags: X - disabled 
+ 0   name="bgp-evpn-ipv4-vni1104" instance=bgp-instance-as4208675309-01 vni=1104 
+     import.route-targets=1104:1104 
+     export.route-targets=1104:1104 
+
+ 1   name="bgp-evpn-ipv6-vni1106" instance=bgp-instance-as4208675309-01 vni=1106 
+     import.route-targets=1106:1106 
+     export.route-targets=1106:1106

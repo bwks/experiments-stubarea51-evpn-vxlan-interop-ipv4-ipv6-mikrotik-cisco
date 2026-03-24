@@ -1,0 +1,18 @@
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       172.31.1.12     YES TFTP   up                    up      
+GigabitEthernet2       100.126.50.1    YES manual up                    up      
+GigabitEthernet3       100.126.50.17   YES manual up                    up      
+GigabitEthernet4       unassigned      YES unset  administratively down down    
+GigabitEthernet5       100.126.1.50    YES manual up                    up      
+GigabitEthernet6       unassigned      YES unset  administratively down down    
+GigabitEthernet7       unassigned      YES unset  administratively down down    
+GigabitEthernet8       unassigned      YES unset  administratively down down    
+GigabitEthernet9       unassigned      YES unset  administratively down down    
+GigabitEthernet10      unassigned      YES unset  administratively down down    
+GigabitEthernet11      unassigned      YES unset  administratively down down    
+GigabitEthernet12      unassigned      YES unset  administratively down down    
+GigabitEthernet13      unassigned      YES unset  administratively down down    
+GigabitEthernet14      unassigned      YES unset  administratively down down    
+GigabitEthernet15      unassigned      YES unset  administratively down down    
+GigabitEthernet16      unassigned      YES unset  administratively down down    
+Loopback0              100.127.1.21    YES manual up                    up      

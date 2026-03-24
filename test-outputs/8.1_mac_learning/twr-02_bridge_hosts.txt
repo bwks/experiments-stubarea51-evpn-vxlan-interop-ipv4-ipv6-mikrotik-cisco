@@ -1,0 +1,15 @@
+Flags: D - DYNAMIC; L - LOCAL
+Columns: MAC-ADDRESS, VID, ON-INTERFACE, BRIDGE
+ #    MAC-ADDRESS         VID  ON-INTERFACE            BRIDGE   
+ 0 DL 12:37:A4:64:42:DD        vxlan-1106-ipv6-twr-02  br-router
+ 1 DL EA:DC:97:20:66:1D        vxlan-1104-ipv4-twr-02  br-router
+ 2 DL EA:DC:97:20:66:1D     1  br-router               br-router
+ 3 D  72:F8:A7:93:B5:43  1104  vxlan-1104-ipv4-twr-02  br-router
+ 4 D  8E:9A:2E:06:F9:A6  1104  vxlan-1104-ipv4-twr-02  br-router
+ 5 DL EA:DC:97:20:66:1D  1104  vxlan-1104-ipv4-twr-02  br-router
+ 6 D  0E:2C:97:B8:5F:8D  1106  vxlan-1106-ipv6-twr-02  br-router
+ 7 DL 12:37:A4:64:42:DD  1106  vxlan-1106-ipv6-twr-02  br-router
+ 8 D  72:F8:A7:93:B5:43  1106  vxlan-1106-ipv6-twr-02  br-router
+ 9 D  8E:9A:2E:06:F9:A6  1106  vxlan-1106-ipv6-twr-02  br-router
+10 D  BA:73:44:4C:51:5D  1106  vxlan-1106-ipv6-twr-02  br-router
+11 DL EA:DC:97:20:66:1D  1106  br-router               br-router

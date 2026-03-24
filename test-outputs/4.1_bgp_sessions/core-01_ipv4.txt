@@ -1,0 +1,9 @@
+% Command accepted but obsolete, unreleased or unsupported; see documentation.
+BGP router identifier 100.127.1.1, local AS number 4208675309
+BGP table version is 1, main routing table version 1
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+100.127.1.21    4   4208675309     840     864        1    0    0 01:11:18        0
+100.127.50.101  4   4208675309     302     306        1    0    0 00:24:30        0
+100.127.50.102  4   4208675309     861     865        1    0    0 01:11:25        0
+100.127.50.103  4   4208675309     213     215        1    0    0 00:17:20        0

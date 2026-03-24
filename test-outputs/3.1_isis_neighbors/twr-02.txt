@@ -1,0 +1,4 @@
+Flags: D - dynamic 
+ 0 D instance=ipvx-isis-1 interface=ether2 level-type=l2 snpa=52:54:00:B6:EA:70 srcid="1001.2700.1021" state=up 
+
+ 1 D instance=ipvx-isis-1 interface=ether3 level-type=l2 snpa=52:54:00:5F:B2:45 srcid="1001.2705.0103" state=up

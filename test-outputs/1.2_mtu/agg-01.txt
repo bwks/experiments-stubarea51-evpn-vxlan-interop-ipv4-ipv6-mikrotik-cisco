@@ -1,0 +1,34 @@
+GigabitEthernet1 is up, line protocol is up 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet2 is up, line protocol is up 
+  MTU 9000 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet3 is up, line protocol is up 
+  MTU 9000 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet4 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet5 is up, line protocol is up 
+  MTU 9000 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet6 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet7 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet8 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet9 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet10 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet11 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet12 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet13 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet14 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet15 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+GigabitEthernet16 is administratively down, line protocol is down 
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+Loopback0 is up, line protocol is up 
+  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, 

@@ -1,0 +1,39 @@
+BGP table version is 77, local router ID is 100.127.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+              t secondary path, L long-lived-stale,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100.127.50.101:1
+ * i  [3][100.127.50.101:1][0][32][100.127.50.101]/17
+                      100.127.50.101                100      0 i
+ *>i                   100.127.50.101                100      0 i
+Route Distinguisher: 100.127.50.101:2
+ * i  [3][100.127.50.101:2][0][128][3FFF:1AB:D127:D50::101]/29
+                      3FFF:1AB:D127:D50::101
+                                                     100      0 i
+ *>i                   3FFF:1AB:D127:D50::101
+                                                     100      0 i
+Route Distinguisher: 100.127.50.102:1
+ *>i  [3][100.127.50.102:1][0][32][100.127.50.102]/17
+                      100.127.50.102                100      0 i
+ * i                   100.127.50.102                100      0 i
+Route Distinguisher: 100.127.50.102:2
+ *>i  [3][100.127.50.102:2][0][128][3FFF:1AB:D127:D50::102]/29
+                      3FFF:1AB:D127:D50::102
+                                                     100      0 i
+ * i                   3FFF:1AB:D127:D50::102
+                                                     100      0 i
+Route Distinguisher: 100.127.50.103:1
+ *>i  [3][100.127.50.103:1][0][32][100.127.50.103]/17
+                      100.127.50.103                100      0 i
+ * i                   100.127.50.103                100      0 i
+Route Distinguisher: 100.127.50.103:2
+ *>i  [3][100.127.50.103:2][0][128][3FFF:1AB:D127:D50::103]/29
+                      3FFF:1AB:D127:D50::103
+                                                     100      0 i
+ * i                   3FFF:1AB:D127:D50::103
+                                                     100      0 i

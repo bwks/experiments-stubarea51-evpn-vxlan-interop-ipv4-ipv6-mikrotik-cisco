@@ -1,0 +1,7 @@
+Flags: D - DYNAMIC
+Columns: INTERFACE, REMOTE-IP
+#   INTERFACE               REMOTE-IP             
+0 D vxlan-1104-ipv4-twr-03  100.127.50.101        
+1 D vxlan-1104-ipv4-twr-03  100.127.50.102        
+2 D vxlan-1106-ipv6-twr-03  3fff:1ab:d127:d50::101
+3 D vxlan-1106-ipv6-twr-03  3fff:1ab:d127:d50::102

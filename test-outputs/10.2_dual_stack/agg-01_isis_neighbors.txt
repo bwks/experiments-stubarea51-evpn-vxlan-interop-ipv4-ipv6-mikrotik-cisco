@@ -1,0 +1,6 @@
+
+Tag sa51:
+System Id       Type Interface     IP Address      State Holdtime Circuit Id
+1001.2705.0101  L2   Gi2           100.126.50.2    UP    9        1001.2705.0101.04  
+1001.2705.0102  L2   Gi3           100.126.50.18   UP    9        1001.2705.0102.01  
+core-01         L2   Gi5           100.126.1.49    UP    7        core-01.01         

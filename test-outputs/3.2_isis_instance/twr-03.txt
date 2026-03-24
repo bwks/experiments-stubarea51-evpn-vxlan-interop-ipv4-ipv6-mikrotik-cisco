@@ -1,0 +1,2 @@
+Flags: X - disabled, I - inactive 
+ 0   name="ipvx-isis-1" afi=ip,ipv6 system-id="1001.2705.0103" areas=49.0051

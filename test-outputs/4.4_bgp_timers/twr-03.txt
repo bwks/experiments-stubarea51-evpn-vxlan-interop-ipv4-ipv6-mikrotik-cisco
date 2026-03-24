@@ -1,0 +1,6 @@
+Flags: * - default; X - disabled, I - inactive 
+ 0 *  name="default" 
+
+ 1    name="bgp-tmplt-ipv4-as4208675309" as=4208675309 hold-time=15s keepalive-time=5s afi=ip 
+
+ 2    name="bgp-tmplt-ipv6-as4208675309" as=4208675309 hold-time=15s keepalive-time=5s afi=ipv6

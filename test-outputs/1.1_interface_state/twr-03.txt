@@ -1,0 +1,20 @@
+Flags: R - RUNNING; S - SLAVE
+Columns: NAME, TYPE, ACTUAL-MTU, L2MTU, MAC-ADDRESS
+ #    NAME                    TYPE      ACTUAL-MTU  L2MTU  MAC-ADDRESS      
+ 0 R  ether1                  ether           1500         52:54:00:40:0D:35
+ 1 R  ether2                  ether           9000         52:54:00:BB:EF:75
+ 2 R  ether3                  ether           9000         52:54:00:5F:B2:45
+ 3    ether4                  ether           1500         52:54:00:B4:78:AF
+ 4    ether5                  ether           1500         52:54:00:8D:81:0E
+ 5    ether6                  ether           1500         52:54:00:B2:52:1A
+ 6    ether7                  ether           1500         52:54:00:53:28:49
+ 7    ether8                  ether           1500         52:54:00:BF:5A:D5
+ 8    ether9                  ether           1500         52:54:00:3E:4A:DA
+ 9 R  br-router               bridge          1500  65535  8E:9A:2E:06:F9:A6
+10 R  lo                      loopback       65536         00:00:00:00:00:00
+11 R  lo.4                    bridge          1500  65535  E2:CE:FE:78:65:32
+12 R  lo.6                    bridge          1500  65535  4E:F2:E5:25:B6:A9
+13 R  v1104                   vlan            1500  65531  8E:9A:2E:06:F9:A6
+14 R  v1106                   vlan            1500  65531  8E:9A:2E:06:F9:A6
+15 RS vxlan-1104-ipv4-twr-03  vxlan           1500  65535  8E:9A:2E:06:F9:A6
+16 RS vxlan-1106-ipv6-twr-03  vxlan           1500  65535  BA:73:44:4C:51:5D

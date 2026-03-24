@@ -1,0 +1,19 @@
+  Last read 00:00:04, last write 00:00:02, hold time is 15, keepalive interval is 5 seconds
+  Configured hold time is 15, keepalive interval is 5 seconds
+  Minimum holdtime from neighbor is 0 seconds
+minRTT: 1 ms, maxRTT: 1000 ms, ACK hold: 120 ms
+  Last read 00:00:01, last write 00:00:02, hold time is 15, keepalive interval is 5 seconds
+  Configured hold time is 15, keepalive interval is 5 seconds
+  Minimum holdtime from neighbor is 0 seconds
+      Remote Restart timer is 0 seconds
+minRTT: 0 ms, maxRTT: 1000 ms, ACK hold: 120 ms
+  Last read 00:00:00, last write 00:00:02, hold time is 15, keepalive interval is 5 seconds
+  Configured hold time is 15, keepalive interval is 5 seconds
+  Minimum holdtime from neighbor is 0 seconds
+      Remote Restart timer is 0 seconds
+minRTT: 0 ms, maxRTT: 1000 ms, ACK hold: 200 ms
+  Last read 00:00:01, last write 00:00:02, hold time is 15, keepalive interval is 5 seconds
+  Configured hold time is 15, keepalive interval is 5 seconds
+  Minimum holdtime from neighbor is 0 seconds
+      Remote Restart timer is 0 seconds
+minRTT: 0 ms, maxRTT: 1000 ms, ACK hold: 120 ms

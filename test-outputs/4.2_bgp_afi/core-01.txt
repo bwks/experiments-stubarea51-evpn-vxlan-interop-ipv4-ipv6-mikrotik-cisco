@@ -1,0 +1,28 @@
+BGP neighbor is 100.127.1.21,  remote AS 4208675309, internal link
+  Minimum holdtime from neighbor is 0 seconds
+  Do log neighbor state changes (via global configuration)
+  BGP table version 1, neighbor version 1/0
+  BGP table version 77, neighbor version 77/0
+  Community attribute sent to this neighbor
+  Extended-community attribute sent to this neighbor
+BGP neighbor is 100.127.50.101,  remote AS 4208675309, internal link
+  Minimum holdtime from neighbor is 0 seconds
+  Do log neighbor state changes (via global configuration)
+  BGP table version 1, neighbor version 1/0
+  BGP table version 77, neighbor version 77/0
+  Community attribute sent to this neighbor
+  Extended-community attribute sent to this neighbor
+BGP neighbor is 100.127.50.102,  remote AS 4208675309, internal link
+  Minimum holdtime from neighbor is 0 seconds
+  Do log neighbor state changes (via global configuration)
+  BGP table version 1, neighbor version 1/0
+  BGP table version 77, neighbor version 77/0
+  Community attribute sent to this neighbor
+  Extended-community attribute sent to this neighbor
+BGP neighbor is 100.127.50.103,  remote AS 4208675309, internal link
+  Minimum holdtime from neighbor is 0 seconds
+  Do log neighbor state changes (via global configuration)
+  BGP table version 1, neighbor version 1/0
+  BGP table version 77, neighbor version 77/0
+  Community attribute sent to this neighbor
+  Extended-community attribute sent to this neighbor

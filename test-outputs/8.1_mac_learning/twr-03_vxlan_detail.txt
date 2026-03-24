@@ -1,0 +1,4 @@
+Flags: X - disabled, R - running; H - hw-offloaded 
+ 0 R  name="vxlan-1104-ipv4-twr-03" mtu=1500 l2mtu=65535 mac-address=8E:9A:2E:06:F9:A6 arp=enabled arp-timeout=auto loop-protect=default loop-protect-status=off loop-protect-send-interval=5s loop-protect-disable-time=5m vni=1104 port=4789 local-address=100.127.50.103 dont-fragment=auto vtep-vrf=main vteps-ip-version=ipv4 allow-fast-path=yes max-fdb-size=4096 ttl=auto learning=no checksum=no rem-csum=none hw=yes bridge=br-router bridge-pvid=1104 
+
+ 1 R  name="vxlan-1106-ipv6-twr-03" mtu=1500 l2mtu=65535 mac-address=BA:73:44:4C:51:5D arp=enabled arp-timeout=auto loop-protect=default loop-protect-status=off loop-protect-send-interval=5s loop-protect-disable-time=5m vni=1106 port=4789 local-address=3fff:1ab:d127:d50::103 dont-fragment=auto vtep-vrf=main vteps-ip-version=ipv6 allow-fast-path=yes max-fdb-size=4096 ttl=auto learning=no checksum=no rem-csum=none hw=yes bridge=br-router bridge-pvid=1106

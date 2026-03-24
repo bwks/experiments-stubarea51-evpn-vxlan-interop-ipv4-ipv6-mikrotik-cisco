@@ -1,0 +1,29 @@
+
+
+
+IS-IS Router: sa51 (0x10000)
+  System Id: 1001.2700.1021.00  IS-Type: level-2  lsp-mtu: 1492
+  Manual area address(es): 
+	49.0051
+  Routing for area address(es): 
+	49.0051
+  Interfaces supported by IS-IS:
+	GigabitEthernet5 - IP - IPv6
+	GigabitEthernet3 - IP - IPv6
+	GigabitEthernet2 - IP - IPv6
+	Loopback0 - IP - IPv6
+  Redistribute(CLNS):
+    static (on by default)
+  Distance for L2 CLNS routes: 110
+  RRR level: none
+  Generate narrow metrics: none
+  Accept narrow metrics:   none
+  Generate wide metrics:   level-1-2
+  Accept wide metrics:     level-1-2
+  Parallel flooding:       suppressed
+  LSP fast flooding:       disabled
+  Adjacency stagger:       disabled
+
+
+
+

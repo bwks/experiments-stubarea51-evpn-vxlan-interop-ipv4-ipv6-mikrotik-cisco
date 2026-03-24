@@ -1,0 +1,5 @@
+Flags: e - EVPN
+Columns: DST-ADDRESS, GATEWAY, AFI, DISTANCE, SCOPE, TARGET-SCOPE
+  DST-ADDRESS                                      GATEWAY                 AFI   DISTANCE  SCOPE  TARGET-SCOPE
+e [100.127.50.102:1]imet:0|100.127.50.102          100.127.50.102          evpn       200     40            10
+e [100.127.50.102:2]imet:0|3fff:1ab:d127:d50::102  3fff:1ab:d127:d50::102  evpn       200     40            10

@@ -1,0 +1,29 @@
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, m - OMP
+       n - NAT, Ni - NAT inside, No - NAT outside, Nd - NAT DIA
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       H - NHRP, G - NHRP registered, g - NHRP registration summary
+       o - ODR, P - periodic downloaded static route, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+       & - replicated local route overrides by connected
+
+Gateway of last resort is 172.31.1.1 to network 0.0.0.0
+
+      100.0.0.0/8 is variably subnetted, 11 subnets, 2 masks
+i L2     100.126.50.0/29 [115/20] via 100.126.1.50, 00:39:45, GigabitEthernet2
+i L2     100.126.50.8/29 [115/40] via 100.126.1.50, 00:39:40, GigabitEthernet2
+i L2     100.126.50.16/29 
+           [115/20] via 100.126.1.50, 01:11:00, GigabitEthernet2
+i L2     100.126.50.24/29 
+           [115/40] via 100.126.1.50, 01:08:54, GigabitEthernet2
+i L2     100.127.1.21/32 [115/20] via 100.126.1.50, 01:11:00, GigabitEthernet2
+i L2     100.127.50.101/32 
+           [115/40] via 100.126.1.50, 00:39:40, GigabitEthernet2
+i L2     100.127.50.102/32 
+           [115/40] via 100.126.1.50, 01:08:54, GigabitEthernet2
+i L2     100.127.50.103/32 
+           [115/60] via 100.126.1.50, 01:11:00, GigabitEthernet2

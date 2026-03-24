@@ -1,0 +1,25 @@
+BGP router identifier 100.127.1.1, local AS number 4208675309
+BGP table version is 77, main routing table version 77
+6 network entries using 2352 bytes of memory
+12 path entries using 2784 bytes of memory
+6/6 BGP path/bestpath attribute entries using 1776 bytes of memory
+2 BGP extended community entries using 80 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 6992 total bytes of memory
+BGP activity 26/20 prefixes, 58/46 paths, scan interval 60 secs
+6 networks peaked at 19:09:12 Mar 24 2026 UTC (01:25:39.142 ago)
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+3FFF:1AB:D127:D1::21
+                4   4208675309     839     861       77    0    0 01:11:14        0
+3FFF:1AB:D127:D50::101
+                4   4208675309     301     304       77    0    0 00:24:26        2
+3FFF:1AB:D127:D50::102
+                4   4208675309     861     864       77    0    0 01:11:22        2
+3FFF:1AB:D127:D50::103
+                4   4208675309     213     215       77    0    0 00:17:20        2
+100.127.1.21    4   4208675309     840     864       77    0    0 01:11:19        0
+100.127.50.101  4   4208675309     302     306       77    0    0 00:24:30        2
+100.127.50.102  4   4208675309     861     865       77    0    0 01:11:25        2
+100.127.50.103  4   4208675309     213     215       77    0    0 00:17:20        2

@@ -1,0 +1,14 @@
+Flags: E - established 
+ 0 E name="bgp-peer-ipv4-core-01-1" instance=bgp-instance-as4208675309-01 
+     remote.address=100.127.1.1 .as=4208675309 .id=100.127.1.1 .capabilities=mp,rr,as4,err .afi=ip,evpn .hold-time=15s .messages=869 .bytes=19453 .eor=ip 
+     local.role=ibgp .address=100.127.50.102 .as=4208675309 .id=100.127.50.102 .cluster-id=100.127.50.102 .capabilities=mp,rr,enhe,gr,as4 .afi=ip,evpn .messages=866 .bytes=16658 .eor="" 
+     output.procid=20 .last-notification=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0015030400 
+     input.procid=20 ibgp 
+     multihop=yes hold-time=15s keepalive-time=5s uptime=1h11m58s210ms last-started=2026-03-24 19:23:26 last-stopped=2026-03-24 19:22:52 prefix-count=4 
+
+ 1 E name="bgp-peer-ipv6-core-01-1" instance=bgp-instance-as4208675309-01 
+     remote.address=3fff:1ab:d127:d1::1 .as=4208675309 .id=100.127.1.1 .capabilities=mp,rr,as4,err .afi=ipv6,evpn .hold-time=15s .messages=868 .bytes=19430 .eor="" 
+     local.role=ibgp .address=3fff:1ab:d127:d50::102 .as=4208675309 .id=100.127.50.102 .cluster-id=100.127.50.102 .capabilities=mp,rr,enhe,gr,as4 .afi=ipv6,evpn .messages=865 .bytes=16639 .eor="" 
+     output.procid=21 .last-notification=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0015030400 
+     input.procid=21 ibgp 
+     multihop=yes hold-time=15s keepalive-time=5s uptime=1h11m55s810ms last-started=2026-03-24 19:23:28 last-stopped=2026-03-24 19:22:53 prefix-count=4

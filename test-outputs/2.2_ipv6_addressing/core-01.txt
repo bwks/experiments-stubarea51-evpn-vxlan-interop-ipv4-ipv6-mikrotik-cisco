@@ -1,0 +1,37 @@
+GigabitEthernet1       [up/up]
+    FE80::5054:FF:FE1A:37E7
+    FD00:B00B:0:1::B
+GigabitEthernet2       [up/up]
+    FE80::5054:FF:FE5A:8552
+    3FFF:1AB:D1:D48::49
+GigabitEthernet3       [administratively down/down]
+    unassigned
+GigabitEthernet4       [administratively down/down]
+    unassigned
+GigabitEthernet5       [administratively down/down]
+    unassigned
+GigabitEthernet6       [administratively down/down]
+    unassigned
+GigabitEthernet7       [administratively down/down]
+    unassigned
+GigabitEthernet8       [administratively down/down]
+    unassigned
+GigabitEthernet9       [administratively down/down]
+    unassigned
+GigabitEthernet10      [administratively down/down]
+    unassigned
+GigabitEthernet11      [administratively down/down]
+    unassigned
+GigabitEthernet12      [administratively down/down]
+    unassigned
+GigabitEthernet13      [administratively down/down]
+    unassigned
+GigabitEthernet14      [administratively down/down]
+    unassigned
+GigabitEthernet15      [administratively down/down]
+    unassigned
+GigabitEthernet16      [administratively down/down]
+    unassigned
+Loopback0              [up/up]
+    FE80::21E:BDFF:FED5:4200
+    3FFF:1AB:D127:D1::1

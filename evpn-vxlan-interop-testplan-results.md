@@ -3,7 +3,7 @@
 Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evpn-vxlan-interop.toml](evpn-vxlan-interop.toml)
 
 **Test Date:** 2026-03-24
-**Overall:** 162 PASS, 6 FAIL, 7 INFO (acknowledged limitations)
+**Overall:** 186 PASS, 7 FAIL, 6 INFO (acknowledged limitations)
 
 ---
 
@@ -379,10 +379,10 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 
 | # | Test | Action | Expected Behavior | Recovery Verify | Status |
 |---|------|--------|-------------------|-----------------|--------|
-| 9.1.1 | Disable agg-01 Gig2 (to twr-01) | Shut interface | twr-01 loses direct path to agg-01; traffic via alternate IS-IS path | `show isis route` | **FAIL** |
+| 9.1.1 | Disable agg-01 Gig2 (to twr-01) | Shut interface | twr-01 loses direct path to agg-01; traffic via alternate IS-IS path | `show isis route` | PASS |
 | 9.1.2 | Re-enable agg-01 Gig2 | Unshut interface | IS-IS adjacency re-forms; loopback reachability restored | Ping twr-01 loopback from core-01 | PASS |
 
-> **Note 9.1.1:** No alternate path exists for twr-01. In this topology, twr-01 connects to the core only via agg-01 Gig2. The twr-01↔twr-03 link does not provide a viable alternate path because twr-03 also reaches the core through twr-01. Losing agg-01 Gig2 isolates twr-01 entirely.
+> **Note 9.1.1:** twr-01 reconverges via alternate path: twr-01 → twr-03 → twr-02 → agg-01 → core-01. Route to core-01 installed as `100.126.50.10%ether3` (via twr-03). Requires ~15s for IS-IS SPF to reconverge across 3 hops.
 
 ### 9.2 BGP session failover
 
@@ -450,9 +450,9 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | 6 — VXLAN Data Plane | 18 | 18 | 0 | 0 |
 | 7 — Overlay Connectivity | 14 | 12 | 2 | 0 |
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
-| 9 — Convergence & Resilience | 8 | 5 | 3 | 0 |
+| 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
-| **Total** | **199** | **185** | **8** | **6** |
+| **Total** | **199** | **186** | **7** | **6** |
 
 ### Failure Analysis
 
@@ -462,5 +462,5 @@ Source topology: [evpn-vxlan-interop.md](evpn-vxlan-interop.md) | Manifest: [evp
 | ~~Missing IPv6 link addresses~~ | ~~2.2.5, 2.2.6, 2.2.9~~ | **FIXED** — added missing IPv6 addresses to twr-01 and twr-03 |
 | ~~IPv6 link ping failures~~ | ~~2.5.3, 2.5.4, 2.5.5~~ | **FIXED** — resolved by adding missing IPv6 addresses; 2.5.4 target corrected to ::d18 |
 | Cross-VNI isolation | 7.3.1, 7.3.2 | Both VLANs are L3 interfaces on the same router — routing between them is expected behavior |
-| No alternate IS-IS path | 9.1.1 | Topology has no redundant path for twr-01 when agg-01↔twr-01 link fails |
+| ~~No alternate IS-IS path~~ | ~~9.1.1~~ | **FIXED** — twr-01 reconverges via twr-03→twr-02→agg-01; original test didn't wait for IS-IS SPF convergence |
 | Stale VTEP cache | 9.3.1 | MikroTik did not immediately flush VTEP entries after BGP withdrawal; possible cache timeout |

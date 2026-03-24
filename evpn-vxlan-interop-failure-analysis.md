@@ -1,7 +1,7 @@
 # EVPN/VXLAN Interop Lab — Failure Analysis
 
 **Test Date:** 2026-03-24
-**Overall:** 185 PASS / 8 FAIL / 6 INFO out of 199 tests
+**Overall:** 186 PASS / 7 FAIL / 6 INFO out of 199 tests
 
 ---
 
@@ -17,7 +17,7 @@
 | 6 — VXLAN Data Plane | 18 | 18 | 0 | 0 |
 | 7 — Overlay Connectivity | 14 | 12 | 2 | 0 |
 | 8 — MAC Learning | 3 | 3 | 0 | 0 |
-| 9 — Convergence & Resilience | 8 | 5 | 3 | 0 |
+| 9 — Convergence & Resilience | 8 | 6 | 2 | 0 |
 | 10 — Interop-Specific | 15 | 9 | 0 | 6 |
 | **Total** | **199** | **185** | **8** | **6** |
 
@@ -96,17 +96,17 @@
 
 ---
 
-### 5. No Alternate IS-IS Path for twr-01 (1 failure)
+### 5. ~~No Alternate IS-IS Path for twr-01 (1 failure)~~ — RESOLVED
 
 | Test | Action | Expected | Actual |
 |------|--------|----------|--------|
 | 9.1.1 | Shut agg-01 Gig2 (to twr-01) | IS-IS reconverges via alternate path | No route to twr-01 — `% Subnet not in table` |
 
-**Root Cause:** The topology provides no redundant path for twr-01. Its only uplink to the core network is via agg-01 Gig2. The twr-01↔twr-03 link is a downstream connection — twr-03 itself routes back through twr-01 to reach the core.
+**Root Cause:** The original automated test checked routing immediately after shutting the link, before IS-IS SPF had time to reconverge across 3 hops (twr-01 → twr-03 → twr-02 → agg-01).
 
-**Impact:** twr-01 is completely isolated when the agg-01↔twr-01 link fails. All BGP sessions and overlay connectivity to twr-01 are lost.
+**Resolution:** With ~15 seconds of convergence time, twr-01 correctly installs an IS-IS route to core-01 via `100.126.50.10%ether3` (twr-03). Both directions (twr-01→core-01 and agg-01→twr-01) work over the alternate path. twr-03 routes through twr-02, not back through twr-01.
 
-**Remediation:** The test expectation assumed an alternate path exists. In this specific topology, twr-01 is single-homed. To add redundancy, a direct link from twr-01 to a second aggregation node or to core-01 would be needed. The test should be updated to reflect the actual topology constraints.
+**Remediation:** None required — the alternate path works. The test harness should allow sufficient convergence time (~15s) for multi-hop IS-IS SPF recalculation.
 
 ---
 

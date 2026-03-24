@@ -1,5 +1,5 @@
 name = "evpn-vxlan-interop"
-ready_timeout = 600
+ready_timeout = 1200
 
 # =============================================================================
 # core-01 — Route Reflector (originally IP Infusion OcNOS, replaced with Cat8000v)
@@ -11,8 +11,6 @@ name = "core-01"
 model = "cisco_cat8000v"
 cpu_count = 2
 memory = 4096
-ipv4_address = "100.127.1.1"
-ipv6_address = "3fff:1ab:d127:d1::1"
 
 # =============================================================================
 # agg-01 — Aggregation (originally IP Infusion OcNOS, replaced with Cat8000v)
@@ -24,8 +22,6 @@ name = "agg-01"
 model = "cisco_cat8000v"
 cpu_count = 2
 memory = 4096
-ipv4_address = "100.127.1.21"
-ipv6_address = "3fff:1ab:d127:d1::21"
 
 # =============================================================================
 # twr-01 — Tower/Edge (MikroTik CHR)
@@ -37,8 +33,6 @@ name = "twr-01"
 model = "mikrotik_chr"
 cpu_count = 1
 memory = 1024
-ipv4_address = "100.127.50.101"
-ipv6_address = "3fff:1ab:d127:d50::101"
 
 # =============================================================================
 # twr-02 — Tower/Edge (MikroTik CHR)
@@ -50,8 +44,6 @@ name = "twr-02"
 model = "mikrotik_chr"
 cpu_count = 1
 memory = 1024
-ipv4_address = "100.127.50.102"
-ipv6_address = "3fff:1ab:d127:d50::102"
 
 # =============================================================================
 # twr-03 — Tower/Edge Legacy MCLAG (MikroTik CHR)
@@ -63,8 +55,6 @@ name = "twr-03"
 model = "mikrotik_chr"
 cpu_count = 1
 memory = 1024
-ipv4_address = "100.127.50.103"
-ipv6_address = "3fff:1ab:d127:d50::103"
 
 # =============================================================================
 # Links — Point-to-Point Underlay Connections
@@ -79,28 +69,28 @@ dst = "agg-01::gig5"
 
 # agg-01 gig2 <-> twr-01 eth2
 # IPv4: 100.126.50.1/29 <-> 100.126.50.2/29
-# IPv6: 3fff:1ab:d50:d0::1/64 <-> 3fff:1ab:d50:d0::2/64
+# IPv6: 3fff:1ab:d50:d0::1/64 <-> (none — twr-01 has no global IPv6 on eth2)
 [[links]]
 src = "agg-01::gig2"
 dst = "twr-01::eth2"
 
 # agg-01 gig3 <-> twr-02 eth2
 # IPv4: 100.126.50.17/29 <-> 100.126.50.18/29
-# IPv6: 3fff:1ab:d50:d16::17/64 <-> 3fff:1ab:d50:d16::18/64
+# IPv6: 3fff:1ab:d50:d16::d17/64 <-> 3fff:1ab:d50:d16::d18/64
 [[links]]
 src = "agg-01::gig3"
 dst = "twr-02::eth2"
 
 # twr-01 eth3 <-> twr-03 eth2
 # IPv4: 100.126.50.9/29 <-> 100.126.50.10/29
-# IPv6: 3fff:1ab:d50:d8::9/64 <-> 3fff:1ab:d50:d8::10/64
+# IPv6: (none — twr-01 has no global IPv6 on eth3) <-> (none — twr-03 has no global IPv6 on eth2)
 [[links]]
 src = "twr-01::eth3"
 dst = "twr-03::eth2"
 
 # twr-02 eth3 <-> twr-03 eth3
 # IPv4: 100.126.50.25/29 <-> 100.126.50.26/29
-# IPv6: 3fff:1ab:d50:d24::25/64 <-> 3fff:1ab:d50:d24::26/64
+# IPv6: 3fff:1ab:d50:d24::d25/64 <-> 3fff:1ab:d50:d24::26/64
 [[links]]
 src = "twr-02::eth3"
 dst = "twr-03::eth3"

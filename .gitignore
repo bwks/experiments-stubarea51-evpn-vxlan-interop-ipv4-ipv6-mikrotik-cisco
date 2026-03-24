@@ -1,0 +1,4 @@
+# Sherpa-generated lab artifacts
+sherpa_ssh_key
+sherpa_ssh_config
+lab-info.toml

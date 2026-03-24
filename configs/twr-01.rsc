@@ -60,7 +60,7 @@ add bridge=br-router tagged=br-router vlan-ids=1106
 # -------------------------------------------------------------------------
 
 /ip vrf
-add interfaces=ether8 name=vrf-lab-mgmt
+add interfaces=ether1 name=vrf-lab-mgmt
 
 # -------------------------------------------------------------------------
 # Port
@@ -74,8 +74,8 @@ set 0 name=serial0
 # -------------------------------------------------------------------------
 
 /ip address
-add address=100.126.50.2/29 interface=ether1 network=100.126.50.0
-add address=100.126.50.9/29 interface=ether2 network=100.126.50.8
+add address=100.126.50.2/29 interface=ether2 network=100.126.50.0
+add address=100.126.50.9/29 interface=ether3 network=100.126.50.8
 add address=100.127.50.101 interface=lo.4 network=100.127.50.101
 add address=198.18.104.101/24 interface=v1104 network=198.18.104.0
 add address=198.18.106.101/24 interface=v1106 network=198.18.106.0
@@ -91,11 +91,13 @@ set accept-router-advertisements=yes
 add address=3fff:1ab:d127:d50::101/128 advertise=no interface=lo.6
 
 # -------------------------------------------------------------------------
-# DHCP Client — Lab Management
+# Management — Static IP
 # -------------------------------------------------------------------------
 
-/ip dhcp-client
-add interface=ether8
+/ip address
+add address=172.31.1.13/24 interface=ether1 network=172.31.1.0
+/ip route
+add dst-address=0.0.0.0/0 gateway=172.31.1.1 routing-table=vrf-lab-mgmt
 
 # -------------------------------------------------------------------------
 # Services — Restrict to Management VRF

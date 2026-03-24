@@ -2,3 +2,5 @@
 sherpa_ssh_key
 sherpa_ssh_config
 lab-info.toml
+__pycache__/
+*.pyc

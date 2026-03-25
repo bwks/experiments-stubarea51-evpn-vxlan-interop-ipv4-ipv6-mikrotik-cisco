@@ -20,6 +20,14 @@ twr-01  twr-02   (MikroTik CHR, EVPN/VXLAN VTEPs)
   twr-03          (MikroTik CHR, EVPN/VXLAN VTEP)
 ```
 
+| Device | Platform | Software | Role |
+|--------|----------|----------|------|
+| core-01 | Cisco Cat8000v | IOS-XE 17.16.1a | BGP Route Reflector |
+| agg-01 | Cisco Cat8000v | IOS-XE 17.16.1a | Aggregation |
+| twr-01 | MikroTik CHR | RouterOS 7.20.8 | EVPN/VXLAN VTEP |
+| twr-02 | MikroTik CHR | RouterOS 7.20.8 | EVPN/VXLAN VTEP |
+| twr-03 | MikroTik CHR | RouterOS 7.20.8 | EVPN/VXLAN VTEP |
+
 - **Underlay:** IS-IS Level-2, area 49.0051, dual-stack IPv4 + IPv6
 - **Overlay:** BGP EVPN with VXLAN data plane — VNI 1104 (IPv4 transport), VNI 1106 (IPv6 transport)
 - **BGP AS:** 4208675309, iBGP with core-01 as route reflector
@@ -147,3 +155,15 @@ PATH="$PWD/.venv/bin:$PATH" .venv/bin/pyats run job pyats_tests/job.py \
 ```
 
 The HTML report is saved to `pyats_tests/results/TaskLog.job.html`. pyATS also archives all runs in `~/.pyats/archive/`.
+
+### Viewing Results with XPRESSO
+
+pyATS includes a built-in web UI (XPRESSO) for browsing test results:
+
+```bash
+# View the most recent test run
+.venv/bin/pyats logs view --latest --host 0.0.0.0 --port 9090
+
+# List all archived runs
+.venv/bin/pyats logs list
+```
